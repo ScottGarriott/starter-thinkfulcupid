@@ -1,6 +1,10 @@
 /* -------  General Styles ------- */
 
 body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
   font-family: "Lato", sans-serif;
   color: #6b1a22;
 }
@@ -32,7 +36,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -40,7 +44,7 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
+  align-items: center;
 }
 
 .item {
@@ -97,6 +101,7 @@ header nav ul li:last-child {
 form {
   border: 2px solid #6b1a22;
   padding: 10px;
+  flex-flow: column nowrap;
 }
 
 form label {
@@ -118,6 +123,18 @@ form button {
   width: 100%;
 }
 
+.form-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* -------  About ------- */
+
+.about-text {
+  display: flex;
+  justify-content: center;
+}
+
 /* -------  Footer ------- */
 
 footer {
@@ -132,14 +149,18 @@ footer p {
 
 /* -------  Media Query ------- */
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 480px) {
   header {
     display: flex;
     justify-content: space-between;
+    padding: 0 30px;
   }
 
   .group {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .logo {
@@ -154,5 +175,10 @@ footer p {
   header nav ul li a:hover {
     color: #bdbdbd;
     text-decoration: none;
+  }
+
+    #blog .item {
+      flex: calc(50% - 20px);
+      margin: 10px;
   }
 }
